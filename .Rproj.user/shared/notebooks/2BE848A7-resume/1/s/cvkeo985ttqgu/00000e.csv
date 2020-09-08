@@ -1,0 +1,8 @@
+"0","jobs_raw <- read_csv(here::here(""data"", ""jobs.csv""))"
+"0","jobs <- jobs_raw %>%"
+"0","  mutate(Start = zoo::as.yearmon(Start, ""%m/%d/%y""),"
+"0","         End = zoo::as.yearmon(End, ""%m/%d/%y"")) %>% "
+"0","  mutate(When = case_when("
+"0","    is.na(End) & !is.na(Start) ~ glue(""{Start}--Present"") %>% as.character(),"
+"0","    !is.na(End) & !is.na(Start) ~ glue(""{Start}--{End}"") %>% as.character()"
+"0","  ))"

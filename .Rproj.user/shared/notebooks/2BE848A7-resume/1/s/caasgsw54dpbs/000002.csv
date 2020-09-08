@@ -1,0 +1,8 @@
+"0","projects %>%"
+"0","  detailed_entries("
+"0","    what = Author,"
+"0","    when = When,"
+"0","    with = Title,"
+"0","    why = Details,"
+"0","    .protect = FALSE"
+"0","  )"

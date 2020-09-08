@@ -1,0 +1,5 @@
+Title,Start,End,Author,Details
+Multivariate Gaussian probability and sampling review,03/01/20,,"Patrick Ding, Debdeep Pati",Compared state of the art algorithms for high dimensional multivariate Gaussian sampling and probability estimation
+Multivariate Gaussian probability and sampling review,03/01/20,,"Patrick Ding, Debdeep Pati",Translated algorithm implementations in Matlab and Python to Rcpp and distributed in R packages
+Word vectors for variational autoencoding topic modeling,09/01/18,01/01/19,"Kristyn Pantoja, Patrick Ding",Investigated the benefits of combining word embeddings and autoencoding topic models
+Word vectors for variational autoencoding topic modeling,09/01/18,01/01/19,"Kristyn Pantoja, Patrick Ding",Implemented variational autoencoding topic models using pytorch

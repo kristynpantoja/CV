@@ -1,0 +1,9 @@
+Start,End,Role,Company,Where,Tag,Why
+05/21/18,08/10/18,Data Science Intern,Adobe,"Lehi, UT",Data science,"Implemented nested Monte Carlo estimators of KL divergence between MCMC, variational Bayes, and MAP posteriors of state space models using R, Stan, and C++"
+05/21/18,08/10/18,Data Science Intern,Adobe,"Lehi, UT",Data science,Evaluated machine learning models for predicting loss of accuracy of approximate inference algorithms for state space models
+05/21/18,08/10/18,Data Science Intern,Adobe,"Lehi, UT",Data science,Demonstrated viability of model for predicting when MAP gives accurate estimates
+06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,Guided investment decisions in Emerging Markets Multi Asset Portfolio with more than one billion dollars in assets by developing factor regression model for emerging market equity and foreign exchange returns
+06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,Guided investment decisions for variance swap sleeves with tens of millions of dollars in assets by building Matlab tools for back testing market timing and selection strategies and developing regression model for predicting variance swap returns
+06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,Expanded firm’s risk management and volatility forecasting capability by modeling option implied volatility surface
+06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,"Enabled firm to fulfill more stringent RFPs by creating realistic option simulator in Matlab, supporting complicated trading, expiration, and hedging behavior with multiple assets"
+06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,Communicated model results to team through daily updating Excel reports with Matlab COM automation and SQL server

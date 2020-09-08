@@ -1,0 +1,143 @@
+---
+name: Patrick
+surname: Ding
+# position: "Professor"
+address: "Texas A&M University, Department of Statistics"
+# phone: +1 22 3333 4444
+# www: mariecurie.com
+email: "patrickding00@gmail.com"
+# twitter: patrickding00
+github: delimited0
+linkedin: patrick-ding-4a855065
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: 000000
+output: vitae::awesomecv
+params:
+  bib_engine: "bibtex"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(dplyr)
+library(readr)
+library(lubridate)
+library(here)
+library(glue)
+library(magrittr)
+library(conflicted)
+library(tibble)
+library(rlang)
+library(stringr)
+conflict_prefer("filter", "dplyr")
+conflict_prefer("here", "here")
+
+scholar_id <- "l_YEty4AAAAJ&"
+```
+
+```{r load jobs, include=FALSE}
+jobs_raw <- read_csv(here::here("data", "jobs.csv"))
+jobs <- jobs_raw %>%
+  mutate(Start = zoo::as.yearmon(Start, "%m/%d/%y"),
+         End = zoo::as.yearmon(End, "%m/%d/%y")) %>% 
+  mutate(When = case_when(
+    is.na(End) & !is.na(Start) ~ glue("{Start}--Present") %>% as.character(),
+    !is.na(End) & !is.na(Start) ~ glue("{Start}--{End}") %>% as.character()
+  ))
+```
+
+```{r load projects, include=FALSE}
+projects_raw <- read_csv(here::here("data", "projects.csv"))
+projects <- projects_raw %>%
+  mutate(Start = zoo::as.yearmon(Start, "%m/%d/%y"),
+         End = zoo::as.yearmon(End, "%m/%d/%y")) %>%
+  mutate(When = case_when(
+    is.na(End) & !is.na(Start) ~ glue("{Start}--Present") %>% as.character(),
+    !is.na(End) & !is.na(Start) ~ glue("{Start}--{End}") %>% as.character()
+  ))
+```
+
+```{r load skills, include = FALSE}
+skills <- read_csv(here::here("data", "skills.csv"))
+```
+
+# Education
+
+```{r education}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  
+  "PhD Statistics", 
+  "Aug 2017 - 2022 (expected)", 
+  "Texas A&M University", 
+  "College Station, Texas", 
+  
+  "BSE Operations Research and Financial Engineering", 
+  "Sep 2011 - Jun 2015", 
+  "Princeton University", 
+  "Princeton, New Jersey"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Experience
+
+```{r experience}
+jobs %>%
+  # arrange(desc(End)) %>%
+  detailed_entries(
+    what = Role,
+    when = When,
+    with = Company,
+    where = Where,
+    why = Why,
+    .protect = FALSE
+  )
+```
+
+# Projects
+
+```{r projects}
+projects %>%
+  detailed_entries(
+    what = Author,
+    when = When,
+    with = Title,
+    why = Details,
+    .protect = FALSE
+  )
+```
+
+# Publications
+
+```{r publications}
+pubs <- scholar::get_publications(scholar_id) %>%
+  distinct(title, .keep_all = TRUE) %>%
+  filter(!is.na(year)) %>%
+  transmute(bibtype = "Article", author = as.character(author),
+            title = as.character(title),
+            journal = as.character(journal), year, key = row_number()) %>%
+  mutate(author = str_replace(author, "P Ding", "\\\\textbf{P Ding}")) %>%
+  mutate(bib = paste0(author, " (", year, "). ", title, ". ", 
+                      "\\textit{", journal, "}. "))
+
+pubs %>%
+  detailed_entries(
+    what = journal, 
+    when = year, 
+    with = title, 
+    # where = journaltitle, 
+    why = bib,
+    .protect = FALSE
+  )
+```
+
+# Skills
+
+```{r skills} 
+skills %>%
+  detailed_entries(what = Software, with = Type, .protect = FALSE)
+```
+
+
+

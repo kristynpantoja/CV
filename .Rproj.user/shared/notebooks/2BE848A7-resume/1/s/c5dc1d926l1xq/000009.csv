@@ -1,0 +1,19 @@
+"0","tribble("
+"0","  ~ Degree, ~ Year, ~ Institution, ~ Where,"
+"0","  "
+"0","  ""PhD Statistics"", "
+"0","  ""Aug 2017 - 2022 (expected)"", "
+"0","  ""Texas A&M University"", "
+"0","  ""College Station, Texas"", "
+"0","  "
+"0","  ""BSE Operations Research and Financial Engineering"", "
+"0","  ""Sep 2011 - Jun 2015"", "
+"0","  ""Princeton University"", "
+"0","  ""Princeton, New Jersey"""
+"0",") %>% "
+"0","  detailed_entries(Degree, Year, Institution, Where, Details)"
+"2","Error: Problem with `summarise()` input `why`.
+[31mx[39m object 'Details' not found
+[34mℹ[39m Input `why` is `compact_list(Details)`.
+[34mℹ[39m The error occurred in group 1: what = ""BSE Operations Research and Financial Engineering"", when = ""Sep 2011 - Jun 2015"", with = ""Princeton University"", where = ""Princeton, New Jersey"".
+"
