@@ -14,6 +14,7 @@ headcolor: "000000"
 output: vitae::awesomecv
 params:
   bib_engine: "bibtex"
+  keep_tex: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -82,27 +83,36 @@ publications <- publications_raw %>%
   # if there are notes
   mutate(Details = case_when(
     is.na(Note) ~ Details,
-    !is.na(Note) ~ paste0(Details, " (", Note, ")")
-  ))
+    !is.na(Note) ~ paste0(Details, "(", Note, ")")
+  )) %>%
+  mutate(Details = paste0("\\vspace{-4mm}", Details))
 ```
 
 # Education
 
 ```{r education}
 tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~Why,
   
   "PhD Candidate, Statistics", 
   "Aug 2017 - May 2022 (expected)", 
   "Texas A&M University", 
   "College Station, Texas",
+  "Scholarships & Awards: Ruth J. and Howard F. Newton Graduate Student Teaching Award (2019), Graduate Merit Scholarship (2017)",
   
-  "BA, magna cum laude, Mathematics, Minor in Philosophy",
+  "BA, Mathematics (Minor: Philosophy)",
   "Aug 2013 - May 2017", 
   "University of Pennsylvania", 
-  "Philadelphia, Pennsylvania"
+  "Philadelphia, Pennsylvania",
+  "Graduated \\textit{magna cum laude}"
 ) %>% 
-  detailed_entries(Degree, Year, Institution, Where)
+  detailed_entries(
+    what = Degree, 
+    when = Year, 
+    with = Institution, 
+    where = Where, 
+    why = Why
+    )
 ```
 
 # Experience
