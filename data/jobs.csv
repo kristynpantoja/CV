@@ -1,9 +1,7 @@
 Start,End,Role,Company,Where,Tag,Why
-05/21/18,08/10/18,Data Science Intern,Adobe,"Lehi, UT",Data science,"Implemented nested Monte Carlo estimators of KL divergence between MCMC, variational Bayes, and MAP posteriors of state space models using R, Stan, and C++"
-05/21/18,08/10/18,Data Science Intern,Adobe,"Lehi, UT",Data science,Evaluated machine learning models for predicting loss of accuracy of approximate inference algorithms for state space models
-05/21/18,08/10/18,Data Science Intern,Adobe,"Lehi, UT",Data science,Demonstrated viability of model for predicting when MAP gives accurate estimates
-06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,Guided investment decisions in Emerging Markets Multi Asset Portfolio with more than one billion dollars in assets by developing factor regression model for emerging market equity and foreign exchange returns
-06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,Guided investment decisions for variance swap sleeves with tens of millions of dollars in assets by building Matlab tools for back testing market timing and selection strategies and developing regression model for predicting variance swap returns
-06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,Expanded firm’s risk management and volatility forecasting capability by modeling option implied volatility surface
-06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,"Enabled firm to fulfill more stringent RFPs by creating realistic option simulator in Matlab, supporting complicated trading, expiration, and hedging behavior with multiple assets"
-06/22/15,06/30/17,Associate,AllianceBernstein,"New York, NY",Finance,Communicated model results to team through daily updating Excel reports with Matlab COM automation and SQL server
+05/21/20,08/21/20,Pharmacometry Intern,"EMD Serono, Merck KgaA","Billerica, MA (remote)",Pharmaceutical,Implemented a novel Bayesian experiment design for dose escalation in Phase I clinical trials in oncology using R and Stan
+05/21/20,08/21/20,Pharmacometry Intern,"EMD Serono, Merck KgaA","Billerica, MA (remote)",Pharmaceutical,Conducted simulation studies to compare the design method to rule-based and model-based designs
+05/21/20,08/21/20,Pharmacometry Intern,"EMD Serono, Merck KgaA","Billerica, MA (remote)",Pharmaceutical,Accepted for a poster session hosted by ASCPT
+05/21/18,08/10/18,Data Science Intern,H-E-B,"San Antonio, TX",Data science,Implemented recommender system for complementary products using Siamese LSTM Neural Network using Python and Keras (with Tensorflow backend)
+05/21/18,08/10/18,Data Science Intern,H-E-B,"San Antonio, TX",Data science,Aggregated transactional data and created labels for model training data based on similarity measures using SQL
+05/21/18,08/10/18,Data Science Intern,H-E-B,"San Antonio, TX",Data science,Demonstrated viability of model for predicting complementary products

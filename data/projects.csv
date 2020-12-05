@@ -1,5 +1,7 @@
 Title,Start,End,Author,Details
-Multivariate Gaussian probability and sampling review,03/01/20,,"Patrick Ding, Debdeep Pati",Compared state of the art algorithms for high dimensional multivariate Gaussian sampling and probability estimation
-Multivariate Gaussian probability and sampling review,03/01/20,,"Patrick Ding, Debdeep Pati",Translated algorithm implementations in Matlab and Python to Rcpp and distributed in R packages
-Word vectors for variational autoencoding topic modeling,09/01/18,01/01/19,"Kristyn Pantoja, Patrick Ding",Investigated the benefits of combining word embeddings and autoencoding topic models
-Word vectors for variational autoencoding topic modeling,09/01/18,01/01/19,"Kristyn Pantoja, Patrick Ding",Implemented variational autoencoding topic models using pytorch
+Supervised log-ratios regression,10/01/20,,"Jing Ma, David Jones, Kristyn Pantoja",Propose a microbiome-based prediction model that utilizes hierarchical clustering based on a novel distance measure to construct multi-resolution predictive signatures
+Minimum energy designs for model selection,02/01/19,,"Kristyn Pantoja, David Jones, Rui Tuo, Huiyan Sang",Propose a Bayesian experiment design method for regression problems where model selection and model checking are of interest
+Minimum energy designs for model selection,02/01/19,,"Kristyn Pantoja, David Jones, Rui Tuo, Huiyan Sang","Apply the design method to linear models, Gaussian Process models, and the variable selection problem"
+Graph signal processing analysis on air traffic network disruptions,01/01/19,06/01/19,"Max Z. Li, Karthik Gopalakrishnan, Hamsa Balakrishnan, Kristyn Pantoja","Analyzed the distributions of delays across airports and showed that attributes of the eigenvector modes and energy contributions are useful metrics to characterize specific disruptions caused by events such as noreasters, Atlantic hurricanes, and equipment outages"
+Word vectors for variational autoencoding topic modeling,09/01/18,01/01/19,"Patrick Ding, Kristyn Pantoja",Investigated the benefits of combining word embeddings and autoencoding topic models
+Word vectors for variational autoencoding topic modeling,09/01/18,01/01/19,"Patrick Ding, Kristyn Pantoja",Implemented variational autoencoding topic models using pytorch

@@ -1,16 +1,16 @@
 ---
-name: Patrick
-surname: Ding
-# position: "Professor"
+name: Kristyn
+surname: Pantoja
+# position: "Student"
 address: "Texas A&M University, Department of Statistics"
-# phone: +1 22 3333 4444
+# phone: +1 210 418 0434
 # www: mariecurie.com
-email: "patrickding00@gmail.com"
-# twitter: patrickding00
-github: delimited0
-linkedin: patrick-ding-4a855065
+email: "kristynp@tamu.edu"
+# twitter: kristynpantoja
+github: kristynpantoja
+linkedin: kristyn-pantoja
 date: "`r format(Sys.time(), '%B %Y')`"
-headcolor: 000000
+headcolor: "000000"
 output: vitae::awesomecv
 params:
   bib_engine: "bibtex"
@@ -32,7 +32,7 @@ library(stringr)
 conflict_prefer("filter", "dplyr")
 conflict_prefer("here", "here")
 
-scholar_id <- "l_YEty4AAAAJ&"
+scholar_id <- "BDsDxgoAAAAJ"
 ```
 
 ```{r load jobs, include=FALSE}
@@ -61,21 +61,46 @@ projects <- projects_raw %>%
 skills <- read_csv(here::here("data", "skills.csv"))
 ```
 
+```{r load publications, include = FALSE}
+publications_raw <- read_csv(here::here("data", "pubs.csv"))
+
+current_year <- str_split(Sys.Date(), pattern = "-")[[1]][1]
+
+publications <- publications_raw %>%
+  # if already published, concatenate Author, Year (else, do current_year+)
+  mutate(Details = case_when(
+    (Status == "In Progress") ~ paste0(Author, " (", current_year, "+). "), 
+    !(Status == "In Progress") ~ paste0(Author, " (", Year, "). ")
+  )) %>%
+  # concatenate Title
+  mutate(Details = paste0(Details,"\`\`", Title, ".\'\' ")) %>%
+  # if already published, concatenate Journal (else, do current_year+)
+  mutate(Details = case_when(
+    (Status == "In Progress") ~ Details,
+    !(Status == "In Progress") ~ paste0(Details, "\\textit{", Journal, "}. ")
+  )) %>%
+  # if there are notes
+  mutate(Details = case_when(
+    is.na(Note) ~ Details,
+    !is.na(Note) ~ paste0(Details, " (", Note, ")")
+  ))
+```
+
 # Education
 
 ```{r education}
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where,
   
-  "PhD Statistics", 
-  "Aug 2017 - 2022 (expected)", 
+  "PhD Candidate, Statistics", 
+  "Aug 2017 - May 2022 (expected)", 
   "Texas A&M University", 
-  "College Station, Texas", 
+  "College Station, Texas",
   
-  "BSE Operations Research and Financial Engineering", 
-  "Sep 2011 - Jun 2015", 
-  "Princeton University", 
-  "Princeton, New Jersey"
+  "BA, magna cum laude, Mathematics, Minor in Philosophy",
+  "Aug 2013 - May 2017", 
+  "University of Pennsylvania", 
+  "Philadelphia, Pennsylvania"
 ) %>% 
   detailed_entries(Degree, Year, Institution, Where)
 ```
@@ -111,23 +136,30 @@ projects %>%
 # Publications
 
 ```{r publications}
-pubs <- scholar::get_publications(scholar_id) %>%
-  distinct(title, .keep_all = TRUE) %>%
-  filter(!is.na(year)) %>%
-  transmute(bibtype = "Article", author = as.character(author),
-            title = as.character(title),
-            journal = as.character(journal), year, key = row_number()) %>%
-  mutate(author = str_replace(author, "P Ding", "\\\\textbf{P Ding}")) %>%
-  mutate(bib = paste0(author, " (", year, "). ", title, ". ", 
-                      "\\textit{", journal, "}. "))
+# # pulling from Google Scholar
+# pubs <- scholar::get_publications(scholar_id) %>%
+#   distinct(title, .keep_all = TRUE) %>%
+#   filter(!is.na(year)) %>%
+#   transmute(bibtype = "Article", author = as.character(author),
+#             title = as.character(title),
+#             journal = as.character(journal), year, key = row_number()) %>%
+  # mutate(author = str_replace(author, "K Pantoja", "\\\\textbf{K Pantoja}")) %>%
+  # mutate(bib = paste0(author, " (", year, "). ", title, ". ",
+  #                     "\\textit{", journal, "}. "))
+# 
+# pubs %>%
+#   detailed_entries(
+#     what = journal, 
+#     when = year,
+#     with = title, 
+#     why = bib,
+#     .protect = FALSE
+#   )
 
-pubs %>%
+publications %>%
   detailed_entries(
-    what = journal, 
-    when = year, 
-    with = title, 
-    # where = journaltitle, 
-    why = bib,
+    with = Status, 
+    why = Details,
     .protect = FALSE
   )
 ```
