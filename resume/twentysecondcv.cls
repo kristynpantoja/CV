@@ -45,9 +45,9 @@
 \def\endfirstpage{\newpage\newgeometry{left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm}}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lfoot{\sf\textcolor[gray]{0.4}{Curriculum Vitae: \@name}}
-\rfoot{\sf\textcolor[gray]{0.4}{\thepage}}
-\cfoot{}
+% \lfoot{\sf\textcolor[gray]{0.4}{Curriculum Vitae: \@name}}
+% \rfoot{\sf\textcolor[gray]{0.4}{\thepage}}
+% \cfoot{}
 \def\headrule{}
 \def\footrule{{\color[gray]{0.4}\hrule\@height\headrulewidth\@width\headwidth \vskip 3pt}}
 \setlength{\parindent}{0pt} % Disable paragraph indentation
