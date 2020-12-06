@@ -11,6 +11,7 @@ github: kristynpantoja
 linkedin: kristyn-pantoja
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: "000000"
+docname: "Resume"
 output: vitae::awesomecv
 params:
   bib_engine: "bibtex"
@@ -100,7 +101,13 @@ tribble(
   "Aug 2017 - May 2022 (expected)", 
   "Texas A&M University", 
   "College Station, Texas",
-  "Scholarships & Awards: Ruth J. and Howard F. Newton Graduate Student Teaching Award (2019), Graduate Merit Scholarship (2017)",
+  "Scholarships & Awards: Ruth J. and Howard F. Newton Graduate Student Teaching Award (2019)",
+  
+  "PhD Candidate, Statistics", 
+  "Aug 2017 - May 2022 (expected)", 
+  "Texas A&M University", 
+  "College Station, Texas",
+  "Relevant Coursework: Machine Learning, Computer Experiments, Neural Networks, Statistical Inference, Bayesian Statistics",
   
   "BA, Mathematics (Minor: Philosophy)",
   "Aug 2013 - May 2017", 

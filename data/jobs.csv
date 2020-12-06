@@ -2,6 +2,6 @@ Start,End,Role,Company,Where,Tag,Why
 05/21/20,08/21/20,Pharmacometry Intern,"EMD Serono, Merck KgaA","Billerica, MA (remote)",Pharmaceutical,Implemented a novel Bayesian experiment design for dose escalation in Phase I clinical trials in oncology using R and Stan
 05/21/20,08/21/20,Pharmacometry Intern,"EMD Serono, Merck KgaA","Billerica, MA (remote)",Pharmaceutical,Conducted simulation studies to compare the design method to rule-based and model-based designs
 05/21/20,08/21/20,Pharmacometry Intern,"EMD Serono, Merck KgaA","Billerica, MA (remote)",Pharmaceutical,Accepted for a poster session hosted by ASCPT
-05/21/18,08/10/18,Data Science Intern,H-E-B,"San Antonio, TX",Data science,Implemented recommender system for complementary products using Siamese LSTM Neural Network using Python and Keras (with Tensorflow backend)
+05/21/18,08/10/18,Data Science Intern,H-E-B,"San Antonio, TX",Data science,Implemented recommender system for complementary products using Siamese LSTM Neural Network using Keras (with Tensorflow backend)
 05/21/18,08/10/18,Data Science Intern,H-E-B,"San Antonio, TX",Data science,Aggregated transactional data and created labels for model training data based on similarity measures using SQL
 05/21/18,08/10/18,Data Science Intern,H-E-B,"San Antonio, TX",Data science,Demonstrated viability of model for predicting complementary products
