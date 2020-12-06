@@ -59,7 +59,9 @@ projects <- projects_raw %>%
 ```
 
 ```{r load skills, include = FALSE}
-skills <- read_csv(here::here("data", "skills.csv"))
+skills_raw <- read_csv(here::here("data", "skills.csv"))
+skills <- skills_raw # %>% 
+  # mutate(Software = paste0("\\vspace{-4mm}", Software))
 ```
 
 ```{r load publications, include = FALSE}
@@ -104,7 +106,7 @@ tribble(
   "Aug 2013 - May 2017", 
   "University of Pennsylvania", 
   "Philadelphia, Pennsylvania",
-  "Graduated \\textit{magna cum laude}"
+  "Graduated magna cum laude"
 ) %>% 
   detailed_entries(
     what = Degree, 
@@ -146,26 +148,6 @@ projects %>%
 # Publications
 
 ```{r publications}
-# # pulling from Google Scholar
-# pubs <- scholar::get_publications(scholar_id) %>%
-#   distinct(title, .keep_all = TRUE) %>%
-#   filter(!is.na(year)) %>%
-#   transmute(bibtype = "Article", author = as.character(author),
-#             title = as.character(title),
-#             journal = as.character(journal), year, key = row_number()) %>%
-  # mutate(author = str_replace(author, "K Pantoja", "\\\\textbf{K Pantoja}")) %>%
-  # mutate(bib = paste0(author, " (", year, "). ", title, ". ",
-  #                     "\\textit{", journal, "}. "))
-# 
-# pubs %>%
-#   detailed_entries(
-#     what = journal, 
-#     when = year,
-#     with = title, 
-#     why = bib,
-#     .protect = FALSE
-#   )
-
 publications %>%
   detailed_entries(
     with = Status, 
@@ -178,7 +160,9 @@ publications %>%
 
 ```{r skills} 
 skills %>%
-  detailed_entries(what = Software, with = Type, .protect = FALSE)
+  detailed_entries(with = Type, 
+                   what = Software, 
+                   .protect = FALSE)
 ```
 
 
