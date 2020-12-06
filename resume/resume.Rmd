@@ -107,7 +107,7 @@ tribble(
   "Aug 2017 - May 2022 (expected)", 
   "Texas A&M University", 
   "College Station, Texas",
-  "Relevant Coursework: Machine Learning, Computer Experiments, Neural Networks, Statistical Inference, Bayesian Statistics",
+  "Relevant Coursework: Machine Learning, Computer Experiments, Deep Learning, Design of Experiments, Bayesian Statistics",
   
   "BA, Mathematics (Minor: Philosophy)",
   "Aug 2013 - May 2017", 
